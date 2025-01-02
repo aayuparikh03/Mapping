@@ -16,7 +16,6 @@ public class Main {
         configuration.addAnnotatedClass(org.example.entities.StudentCollege.class);
         SessionFactory sessionFactory=configuration.buildSessionFactory();
         Session session= sessionFactory.openSession();
-
         try{
             session.beginTransaction();
             Student aayu=new Student();
