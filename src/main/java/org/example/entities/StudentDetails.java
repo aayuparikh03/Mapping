@@ -1,9 +1,6 @@
 package org.example.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class StudentDetails {
@@ -13,6 +10,16 @@ public class StudentDetails {
     int studentDetailsid;
     @Column(name = "ZIPCODE")
     int zipcode;
+    @OneToOne(mappedBy = "studentDetails", cascade = CascadeType.ALL)
+    private Student student;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public int getStudentDetailsid() {
         return studentDetailsid;

@@ -22,7 +22,8 @@ public class Main {
             aayu.setName("Aayu");
             aayu.setStudentDetails(aayuDetails);
 
-            session.persist(aayu);
+            aayuDetails.setStudent(aayu);
+            session.persist(aayuDetails);
             session.getTransaction().commit();
         }finally {
             session.close();
